@@ -25,13 +25,13 @@ Categorical features data exploration:
 
 
 
-Summary:
+**Summary**:
 - unbalanced datasets
 - too many missing values in numerical features
 - too many Unkown values in categorical feature 'stage'
 
 
-Next steps:
+**Next steps**:
 - Process the new Target column based on feature 'date'
 - Handle missing values by (1)fill Null values with mean (2) drop rows contain NaN and add more datapoints from backup datasets.
 - Normalize numerical features
