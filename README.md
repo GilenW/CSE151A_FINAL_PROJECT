@@ -14,13 +14,21 @@ Numerical features data exploration:
 
 
 Categorical features data exploration:
+- Only few missing values in location, industry, stage. However 'stage' contains a lot of Unkown value
 - There are 6 categorical features: company, location, industry, stage, country, date
+- Top 5 frequent industry in the datasets are:'Finance', 'Retail', 'Healthcare', 'Transportation', and other
+- Top 5 frequent location in the datasets are: 'SF Bay Area', 'New York City', 'Boston', 'Bengaluru', 'Los Angeles',
+       'Seattle'
+- Top 5 frequent stage in the datasets are: 'Post-IPO', 'Unknown', 'Series B', 'Series C', 'Series D'
+- Top 5 frequent country in the datasets are: 'United States', 'India', 'Canada', 'United Kingdom', 'Germany'
+- Top 5 frequent company in the datasets are: 'Amazon', 'Uber', 'Spotify', 'Loft', 'Convoy'
 
 
 
 Summary:
 - unbalanced datasets
 - too many missing values in numerical features
+- too many Unkown values in categorical feature 'stage'
 
 
 Next steps:
