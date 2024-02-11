@@ -14,6 +14,7 @@ Numerical features data exploration:
 
 
 Categorical features data exploration:
+- There are 6 categorical features: company, location, industry, stage, country, date
 
 
 
@@ -23,7 +24,7 @@ Summary:
 
 
 Next steps:
+- Process the new Target column based on feature 'date'
 - Handle missing values by (1)fill Null values with mean (2) drop rows contain NaN and add more datapoints from backup datasets.
 - Normalize numerical features
 - Encode categorical features
-- Process the new Target column based on feature 'date'
