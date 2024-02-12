@@ -17,6 +17,8 @@ Numerical features data exploration:
 Categorical features data exploration:
 - Only few missing values in location, industry, stage. However 'stage' contains a lot of Unkown value
 - There are 6 categorical features: company, location, industry, stage, country, quarters(target)
+
+Observation based on plots:
 - Top 5 frequent industry in the datasets are:'Finance', 'Retail', 'Healthcare', 'Transportation', and other
 - Top 5 frequent location in the datasets are: 'SF Bay Area', 'New York City', 'Boston', 'Bengaluru', 'Los Angeles',
        'Seattle'
@@ -25,11 +27,19 @@ Categorical features data exploration:
 - Top 5 frequent company in the datasets are: 'Amazon', 'Uber', 'Spotify', 'Loft', 'Convoy'
 - The most frequent quarter in the datasets is: Q2
 
+Analysis based on heatmap:
+- Relationship between industry and quarters. Layoffs in Finance industry occurs in quarter 2.
+- Relationship between stage and quarters. Layoffs in stage post-ippo occurs in quarter 1.
+- Relationship between locations and quarters. Layoffs in SF bay area occurs in quarter 2.
+- Relationship between locations and quarters. Layoffs based on United States occurs in quarter 2.
+- Relationship between company and quarters. Layoffs in Amazon occurs in quarter 2 and 4.
+
+
 
 
 
 **Summary**:
-- the dataset is balanced in term of target.
+- the dataset is balanced in term of target, the amount of each category of labels is similar.
 - too many missing values in numerical features
 - too many Unkown values in categorical feature 'stage'
 
@@ -38,4 +48,4 @@ Categorical features data exploration:
 - Handle missing values by (1)fill Null values with mean (2) drop rows contain NaN and add more datapoints from backup datasets.
 - Normalize numerical features with min max normalization or z score standardization
 - Encode categorical features with one hot encoding
-- Try baseline model
+- Try baseline model logistic regression.
