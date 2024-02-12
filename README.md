@@ -11,8 +11,8 @@ Numerical features data exploration:
 (1) For total_laid_off, the plot present Uniform distribution
 (2) For percentage_laid_off, the plot present right skewed distribution
 (3) For funds_raised, the plot present Uniform distribution
-(4) The correlation between numerical features are not strong. Weak negative relationship between total_laid_off and percentage_laid_off; Weak positive relationship between total_laid_off and funds_raised;Weak negative relationship between funds_raised and percentage_laid_off; The highest relationship is between funds_raised and percentage_laid_off.
-
+(4) The correlation between numerical features are not strong. Weak negative relationship between total_laid_off and percentage_laid_off; Weak positive relationship between total_laid_off and funds_raised;Weak negative relationship between funds_raised and percentage_laid_off; The highest relationship is between funds_raised and total_laid_off. The highest correlation between target 'quarters' is negative relationship between quarters and total_laid_off.
+(5) There is no evident relationship between target and numerical features from pairplot
 
 Categorical features data exploration:
 - Only few missing values in location, industry, stage. However 'stage' contains a lot of Unkown value
@@ -36,5 +36,6 @@ Categorical features data exploration:
 
 **Next steps**:
 - Handle missing values by (1)fill Null values with mean (2) drop rows contain NaN and add more datapoints from backup datasets.
-- Normalize numerical features
-- Encode categorical features
+- Normalize numerical features with min max normalization or z score standardization
+- Encode categorical features with one hot encoding
+- Try baseline model
