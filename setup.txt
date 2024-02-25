@@ -1,0 +1,3 @@
+1. install virtual environment
+2. following this post to install tensorflow https://stackoverflow.com/questions/59576397/python-kernel-dies-on-jupyter-notebook-with-tensorflow-2
+
