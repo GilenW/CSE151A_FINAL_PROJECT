@@ -1,4 +1,5 @@
 # CSE151A_FINAL_PROJECT
+# MS2
 
 
 Dataset contains 3313 observations and 9 features.
@@ -36,9 +37,7 @@ Analysis based on heatmap:
 
 
 
-**Conclusion**
-- Conclusion for Baseline model: Observing the difference in training error and test error, we believe the model has a sign of over fitting since the training error is much lower than the test error. In the fitting graph, the model may only successfully trace the pattern of training data, and is unable to predict the general pattern on unseen test data. The reason might be that the model is capturing too much noise in the training data and took such information into account of making predictions.
-- Possible improvement of Baseline model: In order to improve the issue of over-fitting we decide to implement models with more layers. The baseline logistic regression fails because it's inability to capture the complex pattern in between categories. By adding layers into the model, we believe such an issue can be improved.
+
 
 **Summary**:
 - the dataset is balanced in term of target, the amount of each category of labels is similar.
@@ -47,4 +46,25 @@ Analysis based on heatmap:
 
 
 **Next steps**:
+- Handle missing values by (1)fill Null values with mean (2) drop rows contain NaN and add more datapoints from backup datasets.
+- Normalize numerical features with min max normalization or z score standardization
+- Encode categorical features with one hot encoding
+- Try baseline model logistic regression.
+
+
+
+
+-------------------------------------
+
+# MS3
+
+
+**Conclusion**
+- Conclusion for Baseline model: Observing the difference in training error and test error, we believe the model has a sign of over fitting since the training error is much lower than the test error. In the fitting graph, the model may only successfully trace the pattern of training data, and is unable to predict the general pattern on unseen test data. The reason might be that the model is capturing too much noise in the training data and took such information into account of making predictions.
+- Possible improvement of Baseline model: In order to improve the issue of over-fitting we decide to implement the sequential model with more layers, different number of nodes, hidden layers and activation function. By adding layers into the model, we believe such an issue can be improved.Regarding the baseline logistic regression, it fails because it's inability to capture the complex pattern in between categories, using hyperparameter tuning with different learning rate and solver might fix this problem.
+
+
+**Next steps**:
 - For the Next two models, we are thinking about exploring binary categorization and multi-class categorization with ANN/CNN> In which we are going to use activation functions 'softmax' and 'sigmoid' correspondingly, to see whether it is best to use  binary categorization and multi-class categorization on our numerical continuous but actually discrete target data 'quarters'.
+- one possible model is multiclass support vector machine. Because the dataset for this project has high dimensional features and svm usually performs well in high dimensional space.Svm is also good at handling non linear relationship with different kernel functions and resistant to overfitting.
+- Another possible model will be Gradient Descent boosting. Because the ensemble techniques that build on multiple decision trees can lead to better performance and capture comple relationship in the dataset. And this model usually less prone to overfitting.
