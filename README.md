@@ -60,6 +60,7 @@ Analysis based on heatmap:
 
 
 **Conclusion**
+![alt text](image.png)
 - Conclusion for Baseline model: Observing the difference in training error and test error, we believe the model has a sign of over fitting since the training error is much lower than the test error. In the fitting graph, the model may only successfully trace the pattern of training data, and is unable to predict the general pattern on unseen test data. The reason might be that the model is capturing too much noise in the training data and took such information into account of making predictions.
 - Possible improvement of Baseline model: In order to improve the issue of over-fitting we decide to implement the sequential model with more layers, different number of nodes, hidden layers and activation function. By adding layers into the model, we believe such an issue can be improved.Regarding the baseline logistic regression, it fails because it's inability to capture the complex pattern in between categories, using hyperparameter tuning with different learning rate and solver might fix this problem.
 
