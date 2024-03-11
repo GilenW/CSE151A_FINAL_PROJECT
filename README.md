@@ -69,3 +69,36 @@ Analysis based on heatmap:
 - For the Next two models, we are thinking about exploring binary categorization and multi-class categorization with ANN/CNN> In which we are going to use activation functions 'softmax' and 'sigmoid' correspondingly, to see whether it is best to use  binary categorization and multi-class categorization on our numerical continuous but actually discrete target data 'quarters'.
 - one possible model is multiclass support vector machine. Because the dataset for this project has high dimensional features and svm usually performs well in high dimensional space.Svm is also good at handling non linear relationship with different kernel functions and resistant to overfitting.
 - Another possible model will be Gradient Descent boosting. Because the ensemble techniques that build on multiple decision trees can lead to better performance and capture comple relationship in the dataset. And this model usually less prone to overfitting.
+
+-------------------------------------
+
+# MS4
+
+
+In this milestone you will focus on building your second model. You will also need to evaluate your this model and see where it fits in the underfitting/overfitting graph.
+
+1. Evaluate your data, labels and loss function. Were they sufficient or did you have have to change them.
+- For previous milestone, we tried neural network for multiclass classification and we processed the target column with one hot encoder. But in this milestone, we tried SVM model with one vs rest approach. So we changed the target column back to the original shape, one column with four discrete labels.
+
+2. Train your second model
+
+- In this milestone, we tried model SVM and Random Forest. We mainly focus on the Random Forest.
+
+3. Evaluate your model compare training vs test error
+
+
+4. Where does your model fit in the fitting graph, how does it compare to your first model?
+In this milestone, we use models like SVM and Random Forest, they do not have explicitive iterative training epochs as neural network. But one thing we did to visualize overfitting through graph was to hypertuning the model with different model complexity and see the training and test accuracies changes over iterations. If the test accuarcy decrease while training accuarcy increases over iteration of hyper tuning, then there indicates overfitting. 
+
+
+
+5. Did you perform hyper parameter tuning? K-fold Cross validation? Feature expansion? What were the results?
+
+5. What is the plan for the next model you are thinking of and why?
+
+6. Update your readme with this info added to the readme with links to the jupyter notebook!
+
+7. Conclusion section: What is the conclusion of your 2nd model? What can be done to possibly improve it? How did it perform to your first and why?
+
+Please make sure your second model has been trained, and predictions for train, val and test are done and analyzed.
+
