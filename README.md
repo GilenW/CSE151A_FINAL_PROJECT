@@ -85,6 +85,18 @@ training error:0.6989409984871406
 training error:0.3726825576995838
 training error:0.6928895612708018
 (3) Hyper parameter tuning SVM
+best parameter {'C': 1, 'gamma': 0.1, 'kernel': 'rbf'}
+SVC(C=1, gamma=0.1)
+training error:0.5270525917517972
+training error:0.6732223903177005
+(4) Random forest
+training error:0.5270525917517972
+training error:0.708018154311649
+(4) hyper parameter tuning Random forest
+{'n_estimators': 40, 'max_depth': 20}
+training error:0.46083995459704885
+training error:0.6913767019667171
+
 
 - Fitting graph
 In this milestone, we use models like SVM and Random Forest, they do not have explicit iterative training epochs as neural network. But one thing we did to visualize overfitting through graph was to hypertuning the model with different model complexity and see the training and test accuracies changes over iterations. If the test accuarcy decrease while training accuarcy increases over iteration of hyper tuning, then there indicates overfitting.
