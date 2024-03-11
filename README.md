@@ -88,7 +88,7 @@ In this milestone you will focus on building your second model. You will also ne
 
 
 4. Where does your model fit in the fitting graph, how does it compare to your first model?
-In this milestone, we use models like SVM and Random Forest, they do not have explicitive iterative training epochs as neural network. But one thing we did to visualize overfitting through graph was to hypertuning the model with different model complexity and see the training and test accuracies changes over iterations. If the test accuarcy decrease while training accuarcy increases over iteration of hyper tuning, then there indicates overfitting. 
+In this milestone, we use models like SVM and Random Forest, they do not have explicit iterative training epochs as neural network. But one thing we did to visualize overfitting through graph was to hypertuning the model with different model complexity and see the training and test accuracies changes over iterations. If the test accuarcy decrease while training accuarcy increases over iteration of hyper tuning, then there indicates overfitting.
 
 
 
