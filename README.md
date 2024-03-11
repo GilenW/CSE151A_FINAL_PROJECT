@@ -75,24 +75,20 @@ Analysis based on heatmap:
 # MS4
 
 
-In this milestone you will focus on building your second model. You will also need to evaluate your this model and see where it fits in the underfitting/overfitting graph.
-
-1. Evaluate your data, labels and loss function. Were they sufficient or did you have have to change them.
 - For previous milestone, we tried neural network for multiclass classification and we processed the target column with one hot encoder. But in this milestone, we tried SVM model with one vs rest approach and tree based model Random Forest. So we changed the target column back to the original shape, one column with four discrete labels. Regarding the loss function, this concept is not applicable for the models we tried in this milestone, but we present a similar performance evaluation approach with hyper parameter tuning.
 
-2. Train your second model
+- Model evaluations and hyper parameter tuning results
+(1) linear SVM
+training error:0.1645856980703746
+training error:0.6989409984871406
+(2) RBF SVM
+training error:0.3726825576995838
+training error:0.6928895612708018
+(3) Hyper parameter tuning SVM
 
-
-3. Evaluate your model compare training vs test error
-
-
-
-4. Where does your model fit in the fitting graph, how does it compare to your first model?
+- Fitting graph
 In this milestone, we use models like SVM and Random Forest, they do not have explicit iterative training epochs as neural network. But one thing we did to visualize overfitting through graph was to hypertuning the model with different model complexity and see the training and test accuracies changes over iterations. If the test accuarcy decrease while training accuarcy increases over iteration of hyper tuning, then there indicates overfitting.
 
-
-
-5. Did you perform hyper parameter tuning? K-fold Cross validation? Feature expansion? What were the results?
 
 5. What is the plan for the next model you are thinking of and why?
 
