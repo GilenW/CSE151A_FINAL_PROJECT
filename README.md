@@ -97,7 +97,6 @@ training error:0.708018154311649
 training error:0.46083995459704885
 training error:0.6913767019667171
 
-
 - Fitting graph
 In this milestone, we use models like SVM and Random Forest, they do not have explicit iterative training epochs as neural network. But one thing we did to visualize overfitting through graph was to hypertuning the model with different model complexity and see the training and test accuracies changes over iterations. If the test accuarcy decrease while training accuarcy increases over iteration of hyper tuning, then there indicates overfitting.
 
@@ -107,12 +106,8 @@ Random forest hyper tuning overfitting graph
 
 Comparing to the first models, the experiment we did on this milestone do not change too much. The accuracy stay the same. Which is the same around 30% of accuracy. From the graph of random forest, we also notice that the training error decreases over the change of hyper parameters, however the testing error slightly increases or stays stable over time. The big difference between the training error and testing error might indicate there's overfitting tendency. We might want to try to make the dataset balanced in next attempt to fix this tendency.
 
+- Next Step: we are planning to use Gradient Boosting to replace Random forest method in previous attempt. Gradient boosting can make better prediction considering it's sequential learning approaches. In comparison with Random Forest model where each tree is created separately, Gradient Boosting builds trees sequentially where each new tree focuses on improving the mistakes made the the previous tree. Due to this reduction of randomness in tree building, Gradient boosting is more prone to overfitting. Also, we may consider placing more efforts in feature engineering to balance the dataset by oversampling and undersampling to make data more relevant. Neural networks may be implemented after gradient boosting, ensembling predictions from different models can potentially increase overall performance. 
 
-5. What is the plan for the next model you are thinking of and why?
 
-6. Update your readme with this info added to the readme with links to the jupyter notebook!
-
-7. Conclusion section: What is the conclusion of your 2nd model? What can be done to possibly improve it? How did it perform to your first and why?
-
-Please make sure your second model has been trained, and predictions for train, val and test are done and analyzed.
+- Conclusion: The second model, which includes linear SVM, RBF SVM, and Random Forest model, outputed an accuracy that remains around 30%, suggesting the overall performance did not significantly improve in comparison with the first model. Moreover, the fact that testing error remains relative high while training error decreases suggests a sign of over-fitting. To adjust aforementioned issues, we figured feature engineering may be necessary where we can oversample or undersample classes to balance the dataset. 
 
