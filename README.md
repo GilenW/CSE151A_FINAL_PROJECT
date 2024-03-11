@@ -101,6 +101,12 @@ training error:0.6913767019667171
 - Fitting graph
 In this milestone, we use models like SVM and Random Forest, they do not have explicit iterative training epochs as neural network. But one thing we did to visualize overfitting through graph was to hypertuning the model with different model complexity and see the training and test accuracies changes over iterations. If the test accuarcy decrease while training accuarcy increases over iteration of hyper tuning, then there indicates overfitting.
 
+Random forest hyper tuning overfitting graph
+![alt text](image-1.png)
+![alt text](image-2.png)
+
+Comparing to the first models, the experiment we did on this milestone do not change too much. The accuracy stay the same. Which is the same around 30% of accuracy. From the graph of random forest, we also notice that the training error decreases over the change of hyper parameters, however the testing error slightly increases or stays stable over time. The big difference between the training error and testing error might indicate there's overfitting tendency. We might want to try to make the dataset balanced in next attempt to fix this tendency.
+
 
 5. What is the plan for the next model you are thinking of and why?
 
