@@ -78,13 +78,13 @@ Analysis based on heatmap:
 In this milestone you will focus on building your second model. You will also need to evaluate your this model and see where it fits in the underfitting/overfitting graph.
 
 1. Evaluate your data, labels and loss function. Were they sufficient or did you have have to change them.
-- For previous milestone, we tried neural network for multiclass classification and we processed the target column with one hot encoder. But in this milestone, we tried SVM model with one vs rest approach. So we changed the target column back to the original shape, one column with four discrete labels.
+- For previous milestone, we tried neural network for multiclass classification and we processed the target column with one hot encoder. But in this milestone, we tried SVM model with one vs rest approach and tree based model Random Forest. So we changed the target column back to the original shape, one column with four discrete labels. Regarding the loss function, this concept is not applicable for the models we tried in this milestone, but we present a similar performance evaluation approach with hyper parameter tuning.
 
 2. Train your second model
 
-- In this milestone, we tried model SVM and Random Forest. We mainly focus on the Random Forest.
 
 3. Evaluate your model compare training vs test error
+
 
 
 4. Where does your model fit in the fitting graph, how does it compare to your first model?
