@@ -252,9 +252,10 @@ After we try multinomial logistic regression, we decide to try sequential model,
 
 ## Model 2 results
 a. SVM
-Since sequential model did not perform well on the task, we raise the assumption that it might be due the high dimentionality of the encoded dataset. So we decide to experiemnt with SVM.
+Since sequential model did not perform well on the task, we raise the assumption that it might be due the high dimentionality of the encoded dataset. So we decide to experiemnt with SVM. There are two apporach for svm to break the multiclass tasks into binary classification task, we choose one to rest. In this approach, SVM set a bianry classfier for each class. However, we notice that during hyperparameter tuning, the testing error curve does not show any change over time. We think that even if svm is good at handling high dimentional dataset, it might struggle with the underlying relationship in the dataset. But the good news is we have new progress in term of performance,  the test accuracy of this model is the best one compared with logistic regression and sequential model.
 
 b. Random Forest
+
 
 
 ## model 3 results
