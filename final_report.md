@@ -1,3 +1,7 @@
+# Previous Milestone README Submissions and Final Code file
+please see the files:
+- previous_milestone_readme.md
+- final_project.ipynb
 
 # INTRODUCTION
 
