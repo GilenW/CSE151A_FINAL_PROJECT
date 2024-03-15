@@ -46,9 +46,32 @@ The goal of this project is to predict Laid off financial period. We add a new t
 ## Model 1
 a. Logistic Regression
 
+```python
+model_lg = LogisticRegression(multi_class='multinomial', solver='lbfgs', max_iter=1000, random_state=42)
+```
+
 b. Sequential Model
+
+- For this neural network model, one extra step before training the model is to preprocess the label with one hot encoder. We also try to optimize the model performance with different activation functions, number of nodes, layers, loss function and early stopping.
+
+```python
+def build_model():
+    sequential_model = Sequential([
+        Dense(64, activation='relu', input_dim=X_train.shape[1]),
+        Dense(32, activation='relu'),
+        Dense(4, activation='softmax')
+    ])
+    sequential_model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
+    return sequential_model
+
+sequential_model = KerasClassifier(build_fn=build_model, epochs=100, batch_size=32, verbose=0)
+early_stopping = EarlyStopping(monitor='val_loss', patience=3, restore_best_weights=True)
+history = sequential_model.fit(X_train, y_train, epochs=100, batch_size=32, validation_split=0.2, callbacks=[early_stopping])
+```
+
 ## Model 2
 a. SVM
+
 
 b. Random Forest
 ## Model 3
@@ -59,6 +82,8 @@ b. Ensemble Models
 
 
 # RESULTS
+- loss plot
+- accuracy 
 
 # DISCUSSION
 
