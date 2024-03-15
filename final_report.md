@@ -7,8 +7,7 @@ Layoffs have become a sensitive but recurring topic after covid-19. Especially i
 
 
 # METHOD
-Methods section (this section will include the exploration results, preprocessing steps, models chosen in the order they were executed. Parameters chosen. Please make sub-sections for every step. i.e Data Exploration, Preprocessing, Model 1, Model 2, Model 3, (note models can be the same i.e. CNN but different versions of it if they are distinct enough). You can put links here to notebooks and/or code blocks using three ` in markup for displaying code. so it would look like this: ``` MY CODE BLOCK ```
-Note: A methods section does not include any why. the reason why will be in the discussion section. This is just a summary of your methods
+
 
 ## Exploration results
 
@@ -222,7 +221,6 @@ Result table
 
 # DISCUSSION
 
-Discussion section: This is where you will discuss the why, and your interpretation and your though process from beginning to end. This will mimic the sections you have created in your methods section as well as new sections you feel you need to create. You can also discuss how believable your results are at each step. You can discuss any short comings. It's ok to criticize as this shows your intellectual merit, as to how you are thinking about things scientifically and how you are able to correctly scrutinize things and find short comings. In science we never really find the perfect solution, especially since we know something will probably come up int he future (i.e. donkeys) and mess everything up. If you do it's probably a unicorn or the data and model you chose are just perfect for each other!
 ## Data exploration
 - In this section we use df.describe() function to have a general idea about the values in the dataframe. Then we do data visualization with histplot for the numerical features and categorical features. We use visualization because it is helpful to see the distribution of numerical data. Then we use correlation plot and correlation matrix to see any potential relationship between features, because this helps to improve the model performance in the later steps of this project, the last step we do in data exploration is checking the frequency of categorical data, this is important because we want to see whether there is any imbalanced informaiton in the features data and the label.
 
@@ -268,11 +266,12 @@ a. Gradient Boosting
 
 b. Oversampling
 
-After we try multiple models, the accuracy does not show any significant change. We think that it is time to change the dataset. One idea that we have during modeling is to balance the dataset. So we decide to use oversampling technique. And test all the models with new balanced dataset. And the highest result at this time is SVM with a testing accuracy of 0.30. Which is lower than what we have before.
+- After we try multiple models, the accuracy does not show any significant change. We think that it is time to change the dataset. One idea that we have during modeling is to balance the dataset. So we decide to use oversampling technique. And test all the models with new balanced dataset. And the highest result at this time is SVM with a testing accuracy of 0.30. Which is lower than what we have before.
 
 
 c. Ensemble Voting Classfier
-The last model we try in this project is to use the balanced dataset and voting classifier. Because this model combine predictions from all the models we have trained and choose the best prediction. This might help to reduce the problem of overfitting, improve the robustness the models and one model might fix the problem of another. And as expect, the final accuracy of this model is the highest among the others. We achieve an accuracy of 0.33.
+
+- The last model we try in this project is to use the balanced dataset and voting classifier. Because this model combine predictions from all the models we have trained and choose the best prediction. This might help to reduce the problem of overfitting, improve the robustness the models and one model might fix the problem of another. And as expect, the final accuracy of this model is the highest among the others. **We achieve an accuracy of 0.33.**
 
 
 
