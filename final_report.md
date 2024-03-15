@@ -247,11 +247,12 @@ We use this model as our first model because the complexity of this model is sim
 
 b. sequential Model
 
-After we try multinomial logistic regression, we decide to try sequential model, because neural network requires less statistical training and is able to detect complex nonlinear relationships between features and labels. In this model, we use categorical_crossentropy as the loss function, which can be used in any kind of classification problem. We use adam optimizer because it converges faster than SGD. We only implement four layers due to the long waiting time during training. We use relu for hidden layers because we want to add nonlinearity relationship during trianing and softmax in the output layer because we want to maximizes the probability of each class in a multiclass prediction task.
+After we try multinomial logistic regression, we decide to try sequential model, because neural network requires less statistical training and is able to detect complex nonlinear relationships between features and labels. In this model, we use categorical_crossentropy as the loss function, which can be used in any kind of classification problem. We use adam optimizer because it converges faster than SGD. We only implement four layers due to the long waiting time during training. We use relu for hidden layers because we want to add nonlinearity relationship during trianing and softmax in the output layer because we want to maximizes the probability of each class in a multiclass prediction task. However the training loss and validation loss plot does not show a fair performance, and the training accuracy of this model is the lowest among the others, it might be due to the a small amount of layers we implement.
 
 
 ## Model 2 results
 a. SVM
+Since sequential model did not perform well on the task, we raise the assumption that it might be due the high dimentionality of the encoded dataset. So we decide to experiemnt with SVM.
 
 b. Random Forest
 
