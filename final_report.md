@@ -243,11 +243,11 @@ c. Transform categorical features
 ## Model 1 results
 a. Logistic Regression
 
-We use this model as our first model because the complexity of this model is simple compared to other advanced models, so we want to have the prediction of this model as baseline. Since our task is multiclass prediction, so we use multinomial logistic regression because our labels is categorical equivalent. But one requirement of this model is that it needs large sample size which we realize in the later stage. But one thing that suprises us is this model predicts the highest training accuracy among all the models we try. But this might also implies overfitting because testing accuracy does not increase overtime.
+- We use this model as our first model because the complexity of this model is simple compared to other advanced models, so we want to have the prediction of this model as baseline. Since our task is multiclass prediction, so we use multinomial logistic regression because our labels is categorical equivalent. But one requirement of this model is that it needs large sample size which we realize in the later stage. But one thing that suprises us is this model predicts the highest training accuracy among all the models we try. But this might also implies overfitting because testing accuracy does not increase overtime.
 
 b. sequential Model
 
-After we try multinomial logistic regression, we decide to try sequential model, because neural network requires less statistical training and is able to detect complex nonlinear relationships between features and labels. In this model, we use categorical_crossentropy as the loss function, which can be used in any kind of classification problem. We use adam optimizer because it converges faster than SGD. We only implement four layers due to the long waiting time during training. We use relu for hidden layers because we want to add nonlinearity relationship during trianing and softmax in the output layer because we want to maximizes the probability of each class in a multiclass prediction task. However the training loss and validation loss plot does not show a fair performance, and the training accuracy of this model is the lowest among the others, it might be due to the a small amount of layers we implement.
+- After we try multinomial logistic regression, we decide to try sequential model, because neural network requires less statistical training and is able to detect complex nonlinear relationships between features and labels. In this model, we use categorical_crossentropy as the loss function, which can be used in any kind of classification problem. We use adam optimizer because it converges faster than SGD. We only implement four layers due to the long waiting time during training. We use relu for hidden layers because we want to add nonlinearity relationship during trianing and softmax in the output layer because we want to maximizes the probability of each class in a multiclass prediction task. However the training loss and validation loss plot does not show a fair performance, and the training accuracy of this model is the lowest among the others, it might be due to the a small amount of layers we implement.
 
 
 ## Model 2 results
@@ -263,8 +263,12 @@ b. Random Forest
 ## model 3 results
 a. Gradient Boosting
 
+- Given the performance of decision tree, we decide to try Gradient Boosting as our last model. Because this model generally has better performance than decision tree and is trained by sequentially by learning the error from previous splits. We hypertune the parameters for both decision tree and gradient boosting. The hyperparameters tuning plots present similar pattern as random forest, the testing curve does not change over time. however, the good thing about this experiment is that we achieve the highest score so far, it has the same accuracy as svm. But the training accuracy is higher than svm. Until this point, we are done with all the models experiments.
+
 
 b. Oversampling
+
+After we try multiple models, the accuracy does not show any significant change. We think that it is time to change the dataset. One idea that we have during modeling is to balance the dataset. So we decide to use oversampling technique. And test all the models with new balanced dataset.
 
 
 c. Ensemble Voting Classfier
