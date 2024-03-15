@@ -243,8 +243,11 @@ c. Transform categorical features
 ## Model 1 results
 a. Logistic Regression
 
+We use this model as our first model because the complexity of this model is simple compared to other advanced models, so we want to have the prediction of this model as baseline. Since our task is multiclass prediction, so we use multinomial logistic regression because our labels is categorical equivalent. But one requirement of this model is that it needs large sample size which we realize in the later stage. But one thing that suprises is this model predicts the highest training accuracy among all the models we try. But this might also implies overfitting because testing accuracy does not increase overtime.
 
 b. sequential Model
+
+After we try multinomial logistic regression, we decide to try sequential model, because
 
 
 ## Model 2 results
