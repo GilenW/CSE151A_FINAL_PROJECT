@@ -88,7 +88,8 @@ best_svm = random_search.best_estimator_
 ```
 
 b. Random Forest
-For this model, we follow similar steps. We first try the defualt model in the library, then optimize it with randomized search. For this project, we choose number of estimators and max depth 
+
+For this model, we follow similar steps. We first try the defualt model imported from the library, then optimize it with randomized search. For this project, we choose number of estimators and max depth as parameters for tuning. The number of iteration for searching is 10 and cross validation is 3. The scoring for searching is accuracy. After the hyperparameter tuning is done, we choose the best estimator for prediction.
 
 ```python
 
@@ -103,13 +104,44 @@ rnd_search.fit(X_train, y_train)
 best_params = rnd_search.best_params_
 best_score = rnd_search.best_score_
 rf_best = RandomForestClassifier(**best_params, random_state=42)
-
-
 ```
+
 ## Model 3
 a. Gradient Boosting
 
-b. Ensemble Models
+The training process for this model is similar to Random Forest in the second experiment. And we use the same hyperparameter tuning method and values. After the tuning is done, we use the best estimator for prediction.
+
+```python
+param_dist = {
+    'n_estimators': [10, 20,30,40],
+    'max_depth': [None, 10, 20,30]
+}
+gb_clf = GradientBoostingClassifier(random_state=42)
+
+random_search = RandomizedSearchCV(estimator=gb_clf, param_distributions=param_dist, cv=3, n_jobs=-1, scoring='accuracy')
+
+random_search.fit(X_train, y_train)
+
+gb_best = random_search.best_estimator_
+```
+
+b. Oversampling
+
+After experiments with different models, we do not see big difference in the results. So we decide to make change to the dataset with oversampling. We use RandomOverSampler to add more copies to minority classes.
+
+```python
+from collections import Counter
+from imblearn.over_sampling import RandomOverSampler
+print('Original dataset shape %s' % Counter(y_train))
+ros = RandomOverSampler(random_state=42)
+X_res, y_res = ros.fit_resample(X_train,y_train)
+print('Resampled dataset shape %s' % Counter(y_res))
+```
+
+c. Ensemble Models (Voting)
+
+
+
 
 
 
