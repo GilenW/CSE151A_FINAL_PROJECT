@@ -213,7 +213,8 @@ c. Ensemble Voting Classfier
 ![alt text](image-11.png)
 
 
-Result table
+Result Summary
+
 | Models |  #Training Accuracy | #Test Accuracy  |
 | ------- | --- | --- |
 | Logistic Regression | 0.804 | 0.301 |
@@ -222,6 +223,11 @@ Result table
 | Best Random Forest | 0.539 | 0.308 |
 | Best Gradient Boosting | 0.741 | 0.319 |
 | Voting Classifier | 0.645 | 0.329 |
+
+
+
+- Overall, the voting classifier shows the highest test accuarcy among all the models, then second best model is SVM and Gradient Boosting models. The model we try in the third experiment has the highest score. However, all the models present relatively low accuracies in testing, but they have relatively high accuracies in training. This show that the potential overfitting. Another observation about the results is, all the plots for hyperparameter tuning present similar pattern. They show that the model are not improving with any values of the different parameters.
+
 
 # DISCUSSION
 
