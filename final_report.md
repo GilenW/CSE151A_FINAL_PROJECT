@@ -88,7 +88,22 @@ best_svm = random_search.best_estimator_
 ```
 
 b. Random Forest
+For this model, we follow similar steps. We first try the defualt model in the library, then optimize it with randomized search. For this project, we choose number of estimators and max depth 
+
 ```python
+
+param_dist = {
+    'n_estimators': [10, 20,30,40],
+    'max_depth': [None, 10, 20,30],
+}
+
+rf_clf = RandomForestClassifier(random_state=42)
+rnd_search = RandomizedSearchCV(rf_clf, param_distributions=param_dist, n_iter=10, cv=3, scoring='accuracy', random_state=42, n_jobs=-1)
+rnd_search.fit(X_train, y_train)
+best_params = rnd_search.best_params_
+best_score = rnd_search.best_score_
+rf_best = RandomForestClassifier(**best_params, random_state=42)
+
 
 ```
 ## Model 3
