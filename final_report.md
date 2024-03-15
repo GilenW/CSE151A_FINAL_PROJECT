@@ -2,7 +2,7 @@ Methods section (this section will include the exploration results, preprocessin
 Note: A methods section does not include any why. the reason why will be in the discussion section. This is just a summary of your methods
 
 
-# Method
+# METHOD
 ## Exploration results
 
 Dataset contains 3313 observations and 9 features.
@@ -39,8 +39,27 @@ The goal of this project is to predict Laid off financial period. We add a new t
 - Relationship between company and quarters. Layoffs in Amazon occurs in quarter 2 and 4.
 
 ## Preprocessing steps
+- Handle missing values: use imputation to replace missing numerical values with the mean of their respective columns. Since categorical values only have 9 missing values. We decide jsut drop the rows.
+- Rescale data: use MinMaxScaler to normalize the numerical features of the dataset to a range between 0 and 1.
+- Transform categorical features: use one hot encoder.
+
 ## Model 1
+a. Logistic Regression
+
+b. Sequential Model
 ## Model 2
+a. SVM
+
+b. Random Forest
 ## Model 3
+a. Gradient Boosting
+
+b. Ensemble Models
 
 
+
+# RESULTS
+
+# DISCUSSION
+
+# CONCLUSION
