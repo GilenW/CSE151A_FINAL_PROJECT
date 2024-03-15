@@ -218,10 +218,42 @@ Result table
 | Best SVM | 0.393 | 0.319 |
 | Best Random Forest | 0.539 | 0.308 |
 | Best Gradient Boosting | 0.741 | 0.319 |
-| Voting Classifier | 301 | 0.33 |
+| Voting Classifier | 0.645 | 0.329 |
 
 # DISCUSSION
 
 Discussion section: This is where you will discuss the why, and your interpretation and your though process from beginning to end. This will mimic the sections you have created in your methods section as well as new sections you feel you need to create. You can also discuss how believable your results are at each step. You can discuss any short comings. It's ok to criticize as this shows your intellectual merit, as to how you are thinking about things scientifically and how you are able to correctly scrutinize things and find short comings. In science we never really find the perfect solution, especially since we know something will probably come up int he future (i.e. donkeys) and mess everything up. If you do it's probably a unicorn or the data and model you chose are just perfect for each other!
+
+## Prepocessing Results
+a. handle missing values
+
+b. Rescale data
+
+
+c. Transform categorical features
+
+
+## Model 1 results
+a. Logistic Regression
+
+b. sequential Model
+
+
+## Model 2 results
+a. SVM
+
+b. Random Forest
+
+
+## model 3 results
+a. Gradient Boosting
+
+
+b. Oversampling
+
+
+c. Ensemble Voting Classfier
+
+
 
 # CONCLUSION
