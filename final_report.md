@@ -268,10 +268,12 @@ a. Gradient Boosting
 
 b. Oversampling
 
-After we try multiple models, the accuracy does not show any significant change. We think that it is time to change the dataset. One idea that we have during modeling is to balance the dataset. So we decide to use oversampling technique. And test all the models with new balanced dataset.
+After we try multiple models, the accuracy does not show any significant change. We think that it is time to change the dataset. One idea that we have during modeling is to balance the dataset. So we decide to use oversampling technique. And test all the models with new balanced dataset. And the highest result at this time is SVM with a testing accuracy of 0.30. Which is lower than what we have before.
 
 
 c. Ensemble Voting Classfier
+The last model we try in this project is to use the balanced dataset and voting classifier. Because this model combine predictions from all the models we have trained and choose the best prediction. This might help to reduce the problem of overfitting, improve the robustness the models and one model might fix the problem of another. And as expect, the final accuracy of this model is the highest among the others. We achieve an accuracy of 0.33.
+
 
 
 
