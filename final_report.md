@@ -228,16 +228,21 @@ Discussion section: This is where you will discuss the why, and your interpretat
 
 ## Prepocessing Results
 a. handle missing values
+- we notice there are missing values in the dataset, and missing values can lead to possible low performance in model training, so we decide to handle the missing values by using the statistic mean of each numerical data. Since numerical data contains a big amount of missing values,total_laid_off contains 34 % missing values
+percentage_laid_off contains 35 % missing values
+funds_raised contains 11 % missing values. We do not want to simply remove the corresponding rows, because it will cause information loss. We choose to impute with mean instead of 0, because we think 0 cannot be a representative value of the dataset. However, filling with mean also has disadvantage, which does not reflect the real situation if we want to apply the result of the project to real world scenario.
 
 
 b. Rescale data
-
+- After we finished filling the missing values, we observe the data values again and notice the all the numerical features have different minimum and maximum range. So we rescale all the elements with normalizaiton and make them lie between 0 and 1.
 
 c. Transform categorical features
+- The dataset contains a mix of numerical and categorical information. Decision trees can work with input without transformation, however some models like logisctic regression cannot process with categorical data directly. So we decide to use one hot encoder to convert strings into numerical values. However, the drawback of this is it generates a big quantity of new variables and causes possible multicollinearity among variables and lower the model's accuracy and slows the training process and adds more complexity.
 
 
 ## Model 1 results
 a. Logistic Regression
+
 
 b. sequential Model
 
