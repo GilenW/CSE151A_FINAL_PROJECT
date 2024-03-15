@@ -1,7 +1,7 @@
 
-# Introduction
+# INTRODUCTION
 
-Layoffs have become a sensitive but recurring topic after covid-19. Especially in the field of technology, undergrads like us are frequently receiving information about our ideal future working companies going through massive layoff. Layoff shows it’s tendency of growing after covid-19 which caused financial shortage and lack of fundings. The emergence of Chat GPT and other AI tools give companies more motivation to shift from human resources to investments in AI. Also, critics claim 2023’s massive layoff generated rewarding rewards from wall street such as the growth of stock price and thus leads to the loop of layoff increasement. To further understand the correlation behind layoff and various aforementioned factors, we carefully selected a dataset consist of companies’ information with detailed layoff record from 2019 to 2023, aiming to provide insight for undergrads and individuals who concerns what factors causes a company to consider layoff and the specific time of their action. 
+Layoffs have become a sensitive but recurring topic after covid-19. Especially in the field of technology, undergrads like us are frequently receiving information about our ideal future working companies going through massive layoff. Layoff shows it’s tendency of growing after covid-19 which caused financial shortage and lack of fundings. The emergence of Chat GPT and other AI tools give companies more motivation to shift from human resources to investments in AI. Also, critics claim 2023’s massive layoff generated rewarding rewards from wall street such as the growth of stock price and thus leads to the loop of layoff increasement. To further understand the correlation behind layoff and various aforementioned factors, we carefully selected a dataset consist of companies’ information with detailed layoff record from 2019 to 2023, aiming to provide insight for undergrads and individuals who concerns what factors causes a company to consider layoff and the specific time of their action.
 
 
 
@@ -96,7 +96,7 @@ best_svm = random_search.best_estimator_
 
 b. Random Forest
 
-For this model, we follow similar steps. We first try the defualt model imported from the library, then optimize it with randomized search. For this project, we choose number of estimators and max depth as parameters for tuning. The number of iteration for searching is 10 and cross validation is 3. The scoring for searching is accuracy. After the hyperparameter tuning is done, we choose the best estimator for prediction.
+- For this model, we follow similar steps. We first try the defualt model imported from the library, then optimize it with randomized search. For this project, we choose number of estimators and max depth as parameters for tuning. The number of iteration for searching is 10 and cross validation is 3. The scoring for searching is accuracy. After the hyperparameter tuning is done, we choose the best estimator for prediction.
 
 ```python
 
@@ -116,7 +116,7 @@ rf_best = RandomForestClassifier(**best_params, random_state=42)
 ## Model 3
 a. Gradient Boosting
 
-The training process for this model is similar to Random Forest in the second experiment. And we use the same hyperparameter tuning method and values. After the tuning is done, we use the best estimator for prediction.
+- The training process for this model is similar to Random Forest in the second experiment. And we use the same hyperparameter tuning method and values. After the tuning is done, we use the best estimator for prediction.
 
 ```python
 param_dist = {
@@ -134,7 +134,7 @@ gb_best = random_search.best_estimator_
 
 b. Oversampling
 
-After experiments with different models, we do not see big difference in the results. So we decide to make change to the dataset with oversampling. We use RandomOverSampler to add more copies to minority classes.
+- After experiments with different models, we do not see big difference in the results. So we decide to make change to the dataset with oversampling. We use RandomOverSampler to add more copies to minority classes.
 
 ```python
 from collections import Counter
@@ -147,14 +147,50 @@ print('Resampled dataset shape %s' % Counter(y_res))
 
 c. Ensemble Models (Voting)
 
+- After we try oversampling the dataset, we decide to apply the ensemble techniques voting to improve the performance. We use voting classifier to train on multiple models and predict the target based on the average of probability given to that class. We do not include the sequential model in this case because of the incompability tensorslow, and based on previous experiment sequential model shows the lowest accuracy, so we believe that excluding sequential model in this experiment would not make big difference.
+
+
+```python
+from sklearn.ensemble import VotingClassifier
+
+voting_clf = VotingClassifier(
+    estimators=[
+        ('lr', model_lg), ('svm', best_svm),
+        ('dtrf', rf_best), ('gb', gb_clf)    ],
+    voting='soft'
+)
+
+voting_clf.fit(X_train, y_train)
+```
+
 
 
 
 
 
 # RESULTS
-- loss plot
-- accuracy
+## Prepocessing Results
+## Model 1 results
+a. Logistic Regression
+![alt text](image-3.png)
+b. sequential Model
+![alt text](image-4.png)
+## Model 2 results
+a. SVM
+
+b. Random Forest
+![alt text](image-5.png)
+![alt text](image-6.png)
+## model 3 results
+a. Gradient Boosting
+![alt text](image-7.png)
+![alt text](image-8.png)
+
+b. Oversampling
+![alt text](image-10.png)
+
+c. Ensemble Voting Classfier
+![alt text](image-11.png)
 
 # DISCUSSION
 
