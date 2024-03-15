@@ -170,17 +170,34 @@ voting_clf.fit(X_train, y_train)
 
 # RESULTS
 ## Prepocessing Results
+a. handle missing values
+
+![alt text](image-14.png)
+
+b. Rescale data
+
+![alt text](image-15.png)
+
+c. Transform categorical features
+
+![alt text](image-16.png)
+
 ## Model 1 results
 a. Logistic Regression
 ![alt text](image-3.png)
+
 b. sequential Model
 ![alt text](image-4.png)
+
 ## Model 2 results
 a. SVM
+![alt text](image-12.png)
+![alt text](image-13.png)
 
 b. Random Forest
 ![alt text](image-5.png)
 ![alt text](image-6.png)
+
 ## model 3 results
 a. Gradient Boosting
 ![alt text](image-7.png)
