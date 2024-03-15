@@ -71,9 +71,26 @@ history = sequential_model.fit(X_train, y_train, epochs=100, batch_size=32, vali
 
 ## Model 2
 a. SVM
+- For this model, we need to have an extra step to transform the dataset. Previously, we transformed the label with one hot encoder for training neural network. But this format is not suitable for training SVM. And the goal of this project is to multi class classfication, we decided to use one versu rest. We experiment two basic kernel functions: linear and rbf. After we try these two basic models, we also perform hyper tuning with randomized search.
+```python
+svm_linear = SVC(kernel='linear', decision_function_shape='ovr')
+svm_rbf = SVC(kernel='rbf', decision_function_shape='ovr')
 
+param_dist = {'C': [0.1, 1, 10],
+              'gamma': [1, 0.1, 0.01],
+              'kernel': ['linear','rbf']}
+
+svm = SVC(decision_function_shape='ovr',random_state=42, probability=True)
+random_search = RandomizedSearchCV(svm, param_distributions=param_dist, n_iter=10, cv=3, random_state=42, n_jobs=-1, scoring='accuracy')
+random_search.fit(X_train, y_train)
+best_svm = random_search.best_estimator_
+
+```
 
 b. Random Forest
+```python
+
+```
 ## Model 3
 a. Gradient Boosting
 
@@ -83,7 +100,7 @@ b. Ensemble Models
 
 # RESULTS
 - loss plot
-- accuracy 
+- accuracy
 
 # DISCUSSION
 
