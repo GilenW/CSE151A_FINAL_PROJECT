@@ -173,48 +173,70 @@ voting_clf.fit(X_train, y_train)
 
 # RESULTS
 ## Prepocessing Results
-a. handle missing values
 
-![alt text](image-14.png)
 
-b. Rescale data
+<img src="image-14.png" width="200" height="200">
 
-![alt text](image-15.png)
+<small><strong>Fig. 1 Handle Missing Values:</strong> This image illustrates features company, location, industry, total_laid_off, percentage_laid_off, stage, country, funds_raised, and quarters all no longer have missing value. </small>
 
-c. Transform categorical features
 
-![alt text](image-16.png)
+<img src="image-15.png" >
+<small><strong>Fig. 2 Rescale Data:</strong> This image shows numerical features total_laid_off, percentage_laid_off, stage, country, funds_raised, and quarters after implementing feature rescale. All data are scaled in between 0 and 1 with the same number of count.</small>
+
+
+<img src="image-16.png" >
+<small><strong>Fig. 3 Transform categorical features: </strong> This image shows categorical features after changing categorical data into numeric values, concatenated with numerical features. </small>
+
 
 ## Model 1 results
-a. Logistic Regression
-![alt text](image-3.png)
+<img src="image-3.png" >
+<small><strong>Fig. 4 Error of Training and Testing set of Logistic Regression Model: </strong> This image is a histogram showing the error of train dataset and test dataset after fitting X into a logistic regression model. The error resulted by fitting training set is 0.2, while the error resulted by fitting testing set is 0.7. </small>
 
-b. sequential Model
-![alt text](image-4.png)
+
+<img src="image-4.png" >
+<small><strong>Fig. 5 Trend of Training and Validation loss of Sequential Model: </strong> This image is a line graph comparing the change in loss over epoch by fitting training dataset and validation dataset to a sequential model. The blue line indicates the trend of change in the loss of training dataset, which shows a tendency of decreasing from 1.4 to 0.5; while the orange line indicates the trend of change in the loss of fitting validation dataset to the sequential model, which shows a tendency of increasing from 1.4 to 1.7. </small>
+
 
 ## Model 2 results
-a. SVM
-![alt text](image-12.png)
-![alt text](image-13.png)
+### SVM
+<img src="image-12.png" >
+<small><strong>Fig. 6 Error over the change of C value in SVM hyperparameter tuning:  </strong> The graph illustrates the change in error in testing dataset and training dataset during SVM hyperparameter tuning of changing C value. The blue line indicates the trend of change in the error of training dataset, which shows a tendency rapid decreasing from 0.38 to 0.12 followed by a trend of stabilizing around 0.11; while the orange line indicates the trend of change in the error of testing dataset which shows a relatively stable error rate around 0.7.  </small>
 
-b. Random Forest
-![alt text](image-5.png)
-![alt text](image-6.png)
+<img src="image-13.png" >
+<small><strong>Fig. 7 Error over the change of Gamma value in SVM hyperparameter tuning:  </strong> The graph illustrates the change in error in testing dataset and training dataset during SVM hyperparameter tuning of changing gamma value. The blue line indicates the trend of change in the error of training dataset, which shows a tendency rapid decreasingfrom 0.53 to 0.15 following a tendency of stabilization around 0.15; while the orange line indicates the trend of change in the error of testing dataset which shows a trend of slight increase from 0.068 to 0.71.  </small>
+
+### Random Forest
+
+<img src="image-5.png" >
+<small><strong>Fig. 8 Error over the change of Max depth in Random Forest Model hyperparameter tuning:  </strong> The graph illustrates the change in error in testing dataset and training dataset during Random Forest Model hyperparameter tuning by changing max depth. The blue line indicates the trend of change in the error of training dataset, which shows a tendency rapid decreasing from 0.7 to under 0.05; while the orange line indicates the trend of change in the error of testing dataset which shows a relative stable high error at 0.7.  </small>
+
+<img src="image-6.png" >
+<small><strong>Fig. 9 Error over the change of Number of Estimators in Random Forest Model hyperparameter tuning:  </strong> The graph illustrates the change in error in testing dataset and training dataset during Random Forest Model hyperparameter tuning by changing the numbers of estimators. The blue line indicates the trend of change in the error of training dataset, which U-shape change, in consist of a rapid decrease from 0.65 to 0.47, followed by a smooth increase from 0.47 to 0.50; while the orange line indicates the trend of change in the error of testing dataset which shows a relative stable high error rate above 0.7.  </small>
 
 ## model 3 results
-a. Gradient Boosting
-![alt text](image-7.png)
-![alt text](image-8.png)
+### Gradient Boosting
+<img src="image-7.png" >
 
-b. Oversampling
-![alt text](image-10.png)
+<small><strong>Fig. 10 Error over the change of Max depth in hyperparameter tuning of Gradient Boosting:  </strong> The graph illustrates the change in error in testing dataset and training dataset during Gradient Boosting hyperparameter tuning by changing max depth. The blue line indicates the trend of change in the error of training dataset, which shows a tendency rapid decreasing from 0.68 to around 0.03, followed by a tend of stabilization around 0.02; while the orange line indicates the trend of change in the error of testing dataset which shows a relative stable high error at 0.7.  </small>
 
-c. Ensemble Voting Classfier
-![alt text](image-11.png)
+<img src="image-8.png" >
+
+<small><strong>Fig. 11 Error over the change of Number of Estimators in Gradient Boosting hyperparameter tuning:  </strong> The graph illustrates the change in error in testing dataset and training dataset during Gradient Boosting hyperparameter tuning by changing the numbers of estimators. The blue line indicates the trend of change in the error of training dataset, which shows a tendency rapid decreasing from 0.48 to around 0.02, followed by a tend of stabilization around 0.02; while the orange line indicates the trend of change in the error of testing dataset which shows a relative stable high error at 0.7.   </small>
+
+### Oversampling
+<img src="image-10.png" >
+
+<small><strong>Fig. 12 Comparison between the Accuracy of models after Oversampling:  </strong> This graph is a histogram showing the accuracy of 5 models. Logistic Regression model has a accuracy of 0.29; the best SVM model has a accuracy of 0.31; the best Random Forest Model has a accuracy of 0.27; the best Gradient Boosting model has a accuracy around 0.30; the best sequential model has a accuracy around 0.27.  </small>
 
 
-Result Summary
+### Ensemble Voting Classfier
+<img src="image-11.png" >
 
+<small><strong>Fig. 13 Report of Ensemble Voting Classifier:  </strong> This chart demonstrates the precision, recall, f1-score, and support value of the ensemble voting classifier. With a overall accuracy of 0.33. </small>
+
+
+
+### Result table
 | Models |  #Training Accuracy | #Test Accuracy  |
 | ------- | --- | --- |
 | Logistic Regression | 0.804 | 0.301 |
@@ -223,8 +245,6 @@ Result Summary
 | Best Random Forest | 0.539 | 0.308 |
 | Best Gradient Boosting | 0.741 | 0.319 |
 | Voting Classifier | 0.645 | 0.329 |
-
-
 
 - Overall, the voting classifier shows the highest test accuarcy among all the models, then second best model is SVM and Gradient Boosting models. The model we try in the third experiment has the highest score. However, all the models present relatively low accuracies in testing, but they have relatively high accuracies in training. This show that the potential overfitting. Another observation about the results is, all the plots for hyperparameter tuning present similar pattern. They show that the model are not improving with any values of the different parameters.
 
