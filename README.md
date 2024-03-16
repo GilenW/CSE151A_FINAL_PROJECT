@@ -251,10 +251,10 @@ voting_clf.fit(X_train, y_train)
 
 # DISCUSSION
 
-## Data exploration
+## Data Exploration Discussion
 - In this section we use df.describe() function to have a general idea about the values in the dataframe. Then we do data visualization with histplot for the numerical features and categorical features. We use visualization because it is helpful to see the distribution of numerical data. Then we use correlation plot and correlation matrix to see any potential relationship between features, because this helps to improve the model performance in the later steps of this project, the last step we do in data exploration is checking the frequency of categorical data, this is important because we want to see whether there is any imbalanced informaiton in the features data and the label.
 
-## Prepocessing Results
+## Prepocessing Discussion
 a. handle missing values
 - we notice there are missing values in the dataset, and missing values can lead to possible low performance in model training, so we decide to handle the missing values by using the statistic mean of each numerical data. Since numerical data contains a big amount of missing values,total_laid_off contains 34 % missing values
 percentage_laid_off contains 35 % missing values
@@ -268,7 +268,7 @@ c. Transform categorical features
 - The dataset contains a mix of numerical and categorical information. Decision trees can work with input without transformation, however some models like logisctic regression cannot process with categorical data directly. So we decide to use one hot encoder to convert strings into numerical values. However, the drawback of this is it generates a big quantity of new variables and causes possible multicollinearity among variables and lower the model's accuracy and slows the training process and adds more complexity.
 
 
-## Model 1 results
+## Model 1 Discussion
 a. Logistic Regression
 
 - We use this model as our first model because the complexity of this model is simple compared to other advanced models, so we want to have the prediction of this model as baseline. Since our task is multiclass prediction, so we use multinomial logistic regression because our labels is categorical equivalent. But one requirement of this model is that it needs large sample size which we realize in the later stage. But one thing that suprises us is this model predicts the highest training accuracy among all the models we try. But this might also implies overfitting because testing accuracy does not increase overtime.
@@ -278,7 +278,7 @@ b. sequential Model
 - After we try multinomial logistic regression, we decide to try sequential model, because neural network requires less statistical training and is able to detect complex nonlinear relationships between features and labels. In this model, we use categorical_crossentropy as the loss function, which can be used in any kind of classification problem. We use adam optimizer because it converges faster than SGD. We only implement four layers due to the long waiting time during training. We use relu for hidden layers because we want to add nonlinearity relationship during trianing and softmax in the output layer because we want to maximizes the probability of each class in a multiclass prediction task. However the training loss and validation loss plot does not show a fair performance, and the training accuracy of this model is the lowest among the others, it might be due to the a small amount of layers we implement.
 
 
-## Model 2 results
+## Model 2 Discussion
 a. SVM
 
 - Since sequential model did not perform well on the task, we raise the assumption that it might be due the high dimentionality of the encoded dataset. So we decide to experiemnt with SVM. There are two apporach for svm to break the multiclass tasks into binary classification task, we choose one to rest. In this approach, SVM set a bianry classfier for each class. However, we notice that during hyperparameter tuning, the testing error curve does not show any change over time. We think that even if svm is good at handling high dimentional dataset, it might struggle with the underlying relationship in the dataset. But the good news is we have new progress in term of performance,  the test accuracy of this model is the best one compared with logistic regression and sequential model.
@@ -288,7 +288,7 @@ b. Random Forest
 
 
 
-## model 3 results
+## Model 3 Discussion
 a. Gradient Boosting
 
 - Given the performance of decision tree, we decide to try Gradient Boosting as our last model. Because this model generally has better performance than decision tree and is trained by sequentially by learning the error from previous splits. We hypertune the parameters for both decision tree and gradient boosting. The hyperparameters tuning plots present similar pattern as random forest, the testing curve does not change over time. however, the good thing about this experiment is that we achieve the highest score so far, it has the same accuracy as svm. But the training accuracy is higher than svm. Until this point, we are done with all the models experiments.
@@ -313,9 +313,8 @@ The main conclusion of this project is that the original correlation between num
 
 # COLLABORATION
 Group Members:
-- Gilen Wu Hou
-- Astoria Ma
-
+- Gilen Wu Hou: member
+- Astoria Ma: member
 
 In planning phase, Gilen selected the dataset and suggested making a custom feature; Astoria came up with the idea of creating "quarters" feature based on continuous date.
 
